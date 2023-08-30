@@ -1,9 +1,9 @@
-class Carro {
   String marca;
   String modelo;
   int ano;
   bool motorLigado = false;
   
+class Carro {
   void ligarMotor() {
     motorLigado = true;
     print("Motor ligado.");

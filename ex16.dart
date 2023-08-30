@@ -50,3 +50,4 @@ void main() {
   
   print("Total do carrinho: R\$ ${carrinho.calcularTotal().toStringAsFixed(2)}");
 }
+//OI
