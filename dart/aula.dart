@@ -5,4 +5,3 @@ void escreve_msg() {
 void main() {
   escreve_msg();
 }
-//oi
