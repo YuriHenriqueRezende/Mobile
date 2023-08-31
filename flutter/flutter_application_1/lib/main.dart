@@ -1,18 +1,5 @@
 import 'package:flutter/material.dart';
 
-int cont = 0; // Variavel global
-void _msg() {
-  cont = cont + 1;
-  print("Desenvolvimento Mobile 1");
-  print("Contagem $cont");
-}
-
-void _msg2() {
-  cont = cont - 1;
-  print("Contagem $cont");
-  print("Senai");
-}
-
 void main() {
   runApp(const MyApp());
 }
@@ -52,14 +39,6 @@ class MyApp extends StatelessWidget {
                           color: Colors.amber,
                           height: 50,
                           width: 300,
-                          child: Text(
-                            "Senai",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 28,
-                                decoration: TextDecoration.none),
-                            textAlign: TextAlign.center,
-                      ),
                     ),
                   ],
                 )
