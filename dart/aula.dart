@@ -27,17 +27,15 @@ void main()
  exibir_dados("Yuri", idade:19, h:1.80); // passagem de parâmetros opcionais 
 }
 */
-void calc_salario(double sal,Function f)
-{
- print("Salario $sal");
- calc_bonus();
-}
-void calc_bonus()
-{
- print("Bonus R\$ 50,00");
-} 
-void main()
-{
- calc_salario(5000, calc_bonus);
+void calc_salario(double sal, Function f) {
+  print("Salario $sal");
+  calc_bonus();
 }
 
+void calc_bonus() {
+  print("Bonus R\$ 50,00");
+}
+
+void main() {
+  calc_salario(5000, calc_bonus);
+}
