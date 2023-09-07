@@ -1,3 +1,4 @@
+
 /*
 void escreve_msg() {
   print("Senai_ADS");
@@ -42,3 +43,20 @@ void main() {
   calc_salario(5000, calc_bonus);
 }
 */
+/*
+class Casa {
+  Casa minhaCasa = Casa();
+  minhaCasa.cor = "Blue";
+  minhaCasa.preco = "R\$ 250.500,00"
+}
+
+void main() {
+  Casa minhaCasa = Casa();
+  minhaCasa.cor = "Blue";
+  print("A cor da casa é" + minhaCasa.cor!);
+}
+*/
+class Carro {
+  Carro meuCarro = Carro();
+  meuCarro = "Cinza";
+}

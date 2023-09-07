@@ -10,9 +10,8 @@ void main() {
 
 double calcularSalarioComDescontoEBonus(double salario) {
   double descontoImpostos = salario * 0.10;
-  double bonificacao = salario * 0.20;
 
-  double salarioLiquido = salario - descontoImpostos + bonificacao;
+  double salarioLiquido = salario - descontoImpostos;
 
   return salarioLiquido;
 }
