@@ -1,4 +1,3 @@
-
 /*
 void escreve_msg() {
   print("Senai_ADS");
@@ -43,21 +42,36 @@ void main() {
   calc_salario(5000, calc_bonus);
 }
 */
-/*
 class Casa {
-  Casa minhaCasa = Casa();
-  minhaCasa.cor = "Blue";
-  minhaCasa.preco = "R\$ 250.500,00"
+  String? cor; // Atributo cor
+  double? valor;
+
+// criar metodos
+  void abrirJanela(int qtde_janelas) {
+    print("Abrir janela, qtde de janelas $qtde_janelas");
+  }
+
+  void abrirPorta() {
+    print("Porta aberta");
+  }
+
+  void abrirCasa() {
+    this.abrirJanela(2);
+    this.abrirPorta();
+  }
 }
 
 void main() {
+  // Instancia a classe com o objeto Casa
   Casa minhaCasa = Casa();
   minhaCasa.cor = "Blue";
-  print("A cor da casa é" + minhaCasa.cor!);
+  print(minhaCasa.cor);
+  minhaCasa.abrirPorta();
+  minhaCasa.abrirJanela(3);
+  minhaCasa.abrirCasa();
+  Casa imovel1 = Casa();
+  imovel1.cor = "Vermelho";
+  print(imovel1.cor);
+  imovel1.valor = 550.000;
+  print("O valor do imovel 1 é R\$  ${imovel1.valor} ");
 }
-
-class Carro {
-  Carro meuCarro = Carro();
-  meuCarro = "Cinza";
-}
-*/
