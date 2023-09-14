@@ -42,6 +42,7 @@ void main() {
   calc_salario(5000, calc_bonus);
 }
 */
+/*
 class Casa {
   String? cor; // Atributo cor
   double? valor;
@@ -75,3 +76,26 @@ void main() {
   imovel1.valor = 550.000;
   print("O valor do imovel 1 é R\$  ${imovel1.valor} ");
 }
+*/
+/*
+class Usuario {
+  String? usuario;
+  String? senha;
+  void authenticar() {
+    var usuario = "admin";
+    var senha = "admin";
+    if(this.usuario == usuario && this.senha == senha){
+      print("Login Correto");
+    }
+    else{
+      print("login incorreto");
+    }
+  }
+}
+void main(){
+  Usuario usuario = Usuario();
+  usuario.usuario = "admin";
+  usuario.senha = "admin";
+  usuario.authenticar();
+}
+*/
