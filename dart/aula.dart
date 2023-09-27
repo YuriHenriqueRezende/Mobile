@@ -99,3 +99,27 @@ void main(){
   usuario.authenticar();
 }
 */
+/*
+class Fruta {
+  String nome;
+  String sabor;
+  double peso;
+  int dia_de_colheita;
+
+  Fruta(this.nome, this.sabor, this.peso,this.dia_de_colheita);
+
+void madura(int isMadura){
+
+  if(isMadura >= dia_de_colheita){
+    print("A fruta $nome esta madura");
+    } else {
+      print("A fruta $nome não esta madura");
+    }
+  }  
+}
+
+void main(){
+  Fruta Laranja = Fruta("Laranja", "Doce", 100, 10);
+  Laranja.madura(10);
+}
+*/
