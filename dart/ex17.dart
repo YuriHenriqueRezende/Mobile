@@ -14,7 +14,7 @@ class Pessoa {
 
 void main() {
   Pessoa pessoa1 = Pessoa('João', 30, 'Engenheiro', 5000.00);
-
+  print('------------------------');
   pessoa1.exibirTrabalho('Robert Bosch', 5);
   print('------------------------');
 }
