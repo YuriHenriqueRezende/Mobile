@@ -100,13 +100,18 @@ void main(){
 }
 */
 /*
-class Fruta {
+class Alimento{
   String nome;
   String sabor;
   double peso;
+
+  Alimento(this.nome,this.sabor,this.peso);
+
+}
+class Fruta extends Alimento {
   int dia_de_colheita;
 
-  Fruta(this.nome, this.sabor, this.peso,this.dia_de_colheita);
+  Fruta(String nome, String sabor, double peso,this.dia_de_colheita):super(nome,sabor,peso);
 
 void madura(int isMadura){
 
@@ -118,8 +123,23 @@ void madura(int isMadura){
   }  
 }
 
+class Legumes extends Alimento{
+  Legumes(String nome,String sabor,double peso):super(nome,sabor,peso);
+
+void cozinhar(bool iscozinhar){
+  if(iscozinhar == true){
+  print("O legume $nome precisa cozinhar");
+    }else{
+      print("O legume $nome não precisa cozinhar");
+    }
+  }
+}
+
+
 void main(){
-  Fruta Laranja = Fruta("Laranja", "Doce", 100, 10);
-  Laranja.madura(10);
+  Fruta uva = Fruta("Uva", "Doce", 5, 20);
+  uva.madura(25);
+  Legumes abobora = Legumes("Abobora", "Doce", 150);
+  abobora.cozinhar(true);
 }
 */
