@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -49,7 +51,7 @@ class Task extends StatelessWidget {
                 fit: BoxFit.fill,),),
                 Text(
                   tarefa,
-                  style: TextStyle(fontSize: 22),
+                  style: const TextStyle(fontSize: 22),
                 ),
                 ElevatedButton(
                     onPressed: () {
