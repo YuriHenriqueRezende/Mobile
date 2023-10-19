@@ -11,41 +11,54 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Container(
-            color: Colors.white, // cor do container principal
-            child: Column(
-              // coluna
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly, // alinhamento
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Aplicativo Tarefas'),
+        ),
+        body: const Column(
+          children: [
+            Task(),
+            Task(),
+            Task(),
+            Task(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Task extends StatelessWidget {
+  final String Tarefa;
+  const Task({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Stack(
+        children: [
+          Container(color: Colors.blue, height: 140),
+          Container(
+            color: Colors.white,
+            height: 100,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // estabelece relação dos componentes
-                Stack(
-                  alignment: AlignmentDirectional.center,
-                  children: [
-                    Container(
-                      color: Colors.red,
-                      width: 400,
-                      height: 80,
-                    ),
-                    Container(
-                      color: Colors.blue,
-                      width: 350,
-                      height: 80,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Container(
-                          color: Colors.amber,
-                          height: 50,
-                          width: 300,
-                    ),
-                  ],
-                )
+                Container(color: Colors.grey, height: 100, width: 80),
+                const Text(
+                  "Aprender Flutter",
+                  style: TextStyle(fontSize: 22),
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      print("Botão pressionado");
+                    },
+                    child: const Icon(Icons.arrow_drop_up)),
               ],
-            )
-          ]
-        )              
+            ),
+          ),
+        ],
       ),
     );
   }
