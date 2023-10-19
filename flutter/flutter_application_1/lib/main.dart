@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
         ),
         body: const Column(
           children: [
-            Task(),
-            Task(),
-            Task(),
-            Task(),
+            Task("Aprender Flutter"),
+            Task(" Jogar video game"),
+            Task("Estudar"),
+            Task("Jogar futebol"),
           ],
         ),
       ),
@@ -29,8 +29,8 @@ class MyApp extends StatelessWidget {
 }
 
 class Task extends StatelessWidget {
-  final String Tarefa;
-  const Task({super.key});
+  final String tarefa;
+  const Task(this.tarefa, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +45,10 @@ class Task extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(color: Colors.grey, height: 100, width: 80),
-                const Text(
-                  "Aprender Flutter",
+                Container(color: Colors.grey, height: 100, width: 80, child: Image.network('https://images.tcdn.com.br/img/img_prod/240061/django_16_1_20190227092231.png',
+                fit: BoxFit.fill,),),
+                Text(
+                  tarefa,
                   style: TextStyle(fontSize: 22),
                 ),
                 ElevatedButton(
