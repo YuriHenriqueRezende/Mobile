@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,14 +13,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Aplicativo Tarefas'),
+          title: Text('Aplicativo Tarefas'),
         ),
-        body: const Column(
+        body: Column(
           children: [
-            Task("Aprender Flutter"),
-            Task(" Jogar video game"),
-            Task("Estudar"),
-            Task("Jogar futebol"),
+            Task("Aprender Flutter",
+                "https://cdn-images-1.medium.com/v2/resize:fit:1024/0*vowtRZE_wvyVA7CB"),
+            Task(" Jogar video game",
+                "https://a-static.mlcdn.com.br/800x560/console-sony-playstation-5-825gb-marvels-spider-man-2-limited-edition/magazineluiza/237808200/7c0d5369fd416119d04202e4eb5513a0.jpg"),
+            Task("Estudar",
+                "https://img.imageboss.me/revista-cdn/cdn/6161/2264a8d4f17f8ee3f56155468163979b38eefbbf.jpg?1515696991"),
+            Task("Jogar futebol",
+                "https://conteudo.imguol.com.br/c/esporte/15/2022/12/18/messi-com-o-trofeu-da-copa-do-mundo-no-qatar-1671394673199_v2_900x506.jpg"),
           ],
         ),
       ),
@@ -32,7 +34,8 @@ class MyApp extends StatelessWidget {
 
 class Task extends StatelessWidget {
   final String tarefa;
-  const Task(this.tarefa, {super.key});
+  final String img;
+  const Task(this.tarefa, this.img, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,17 +50,24 @@ class Task extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(color: Colors.grey, height: 100, width: 80, child: Image.network('https://images.tcdn.com.br/img/img_prod/240061/django_16_1_20190227092231.png',
-                fit: BoxFit.fill,),),
+                Container(
+                  color: Colors.grey,
+                  height: 100,
+                  width: 80,
+                  child: Image.network(
+                    img,
+                    fit: BoxFit.fill,
+                  ),
+                ),
                 Text(
                   tarefa,
-                  style: const TextStyle(fontSize: 22),
+                  style: TextStyle(fontSize: 22),
                 ),
                 ElevatedButton(
                     onPressed: () {
                       print("Botão pressionado");
                     },
-                    child: const Icon(Icons.arrow_drop_up)),
+                    child: Icon(Icons.arrow_drop_up)),
               ],
             ),
           ),
