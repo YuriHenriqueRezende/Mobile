@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../Projetos_Web"
+		},
+		{
+			"path": "../../../../Projetos_Software"
+		}
+	],
+	"settings": {
+		"[python]": {
+			"editor.defaultFormatter": "ms-python.python"
+		},
+		"python.formatting.provider": "none",
+		"liveServer.settings.multiRootWorkspaceName": "Projetos_Web"
+	}
+}
