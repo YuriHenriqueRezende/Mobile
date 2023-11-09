@@ -16,7 +16,31 @@ class Home extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(color: Colors.blue,width: 393,height: 250,
+          Componente(),
+        ]
+      ),
+    );
+  }
+}
+
+class Componente extends StatefulWidget {
+  const Componente({super.key});
+
+  @override
+  State<Componente> createState() => _Componente();
+}
+
+class _Componente extends State<Componente> {
+  int cont = 0;
+  void _increment_counter(){
+    setState(() {
+          cont++;
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
+      Container(color: Colors.blue,width: 393,height: 250, child: Image.asset('imagens/r.jpg', fit: BoxFit.fill),
               ),
               Text("Componente",style: TextStyle(fontSize: 30),),
             Container(color: Colors.red,width: 200,height: 200,
@@ -30,10 +54,9 @@ class Home extends StatelessWidget {
                 ElevatedButton(onPressed: (){
                   print("Contagem + 1");
                 }, child: Icon(Icons.add)),
-              ],
-            ),
           ],
-      ),
+        ),
+      ],
     );
   }
 }
