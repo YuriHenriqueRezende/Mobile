@@ -1,4 +1,4 @@
-# app_comp_eletronicos
+# somativa
 
 A new Flutter project.
 

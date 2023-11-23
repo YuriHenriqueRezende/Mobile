@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
     return MaterialApp( 
     home: Scaffold(
       appBar: AppBar(
-        title: const Text("EletroShoppe 2.0"),
+        title: const Text("MANGE FILMS "),
       ),
       body: ListView(
         children: const [
