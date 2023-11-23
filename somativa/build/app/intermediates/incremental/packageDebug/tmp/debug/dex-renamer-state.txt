@@ -1,0 +1,4 @@
+#Wed Nov 22 19:47:53 BRT 2023
+base.0=C\:\\Users\\yurih\\Documents\\Projetos Mobile\\ADS_MOBILE\\somativa\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
