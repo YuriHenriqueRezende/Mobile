@@ -12,20 +12,31 @@ class Home extends StatelessWidget {
     return MaterialApp( 
     home: Scaffold(
       appBar: AppBar(
-        title: const Text("MANGE FILMS "),
+        title: const Text("MANGE TRIPS "),
       ),
       body: ListView(
         children: const [
-           shoppe("imagens/resistor.jpg", "Teste", "ryan é maravilhoso aasbduregufefhj", 500, 60),
-          
+           shoppe("imagens/roberto.jpg", "Senai Roberto Mange", "Venha conhecer a melhor faculdade de \n                     Campinas-SP", 20, 5),
+           shoppe("imagens/arraial_do_cabo.jpg", " Arraial do Cabo", "Venha conhecer Arraial do Cabo", 534, 65),
+           shoppe("imagens/chile.jpg", "Chile", "Venha conhecer Chile", 446, 95),
+           shoppe("imagens/florianopolis.jpg", "Florianópolis", "Venha conhecer Florianópolis", 348, 85),
+           shoppe("imagens/jeriacoacoara.jpg", "Jericoacoara", "Venha conhecer Jericoacoara", 571, 75),
+           shoppe("imagens/las_vegas.jpg", "Las Vegas", "Venha conhecer Las Vegas", 504, 110),
+           shoppe("imagens/madri.jpg", "Madri", "Venha conhecer Madri", 401, 85),
+           shoppe("imagens/orlando.jpg", "Orlando", "Venha conhecer Orlando", 616, 105),
+           shoppe("imagens/paris.jpg", "Paris", "Venha conhecer O MELHOR JOGADOR DO MUNDO!!!", 546, 95),
+           shoppe("imagens/roma.jpg", "Roma", "Venha conhecer Roma", 478, 85),
+           shoppe("imagens/angra_dos_reis.jpg", "Angra dos Reis", "Venha conhecer Angra dos Reis", 384, 70),
+           
+           
 
-        ], //children!!!
-      )
-    
-    ),
+          ], //children!!!
+        )
+      ),
     );
   }
 }
+
 
 class shoppe extends StatefulWidget {
   final String imagem;
@@ -85,26 +96,19 @@ class _shoppeState extends State<shoppe> {
           style: const TextStyle(fontSize: 30),
                 ),
         Text(
-          "R\$ ${widget.preco_d}/dia / R\$ ${widget.preco_p}/pessoa ",
-          style: const TextStyle(fontSize: 20, color: Colors.amber),
+          "R\$ ${widget.preco_d}/dia - R\$ ${widget.preco_p}/pessoa ",
+          style: const TextStyle(fontSize: 20, color: Colors.red),
                 ),
 
         Text(
           "${widget.descricao}\n",
           style: const TextStyle(fontSize: 20), textAlign: TextAlign.left,
                 ),
-        
-        
-        // Container(color: Colors.red, width: 200,height: 200, alignment: Alignment.topLeft,
-        // child: Text("Quantidade de resistores: $cont \n -------------------------------------------- \n Total a pagar: $total R\$", style: const TextStyle(fontSize: 30),textAlign: TextAlign.center, 
-        // ),
-        // ),
-        
-        
+      
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-            Container(color: Colors.red, width: 200,height: 50,
+            Container(color: const Color.fromARGB(255, 255, 255, 255), width: 200,height: 50,
             child: Text("Quantidade de dias: $contDay ", style: const TextStyle(fontSize: 20),textAlign: TextAlign.left, 
             ),
             ),
@@ -115,7 +119,7 @@ class _shoppeState extends State<shoppe> {
          Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-            Container(color: Colors.red, width: 200,height: 50,
+            Container(color: const Color.fromARGB(255, 255, 255, 255), width: 200,height: 50,
             child: Text("Quantidade de pessoas: $contPeople ", style: const TextStyle(fontSize: 20),textAlign: TextAlign.left, 
             ),
             ),
@@ -135,12 +139,8 @@ class _shoppeState extends State<shoppe> {
             ElevatedButton(onPressed: _calc, child: const Text("calcular valor"))
           ],
         ),
-        
-        
-        
       ],
     );
-   
   }
 }
 
