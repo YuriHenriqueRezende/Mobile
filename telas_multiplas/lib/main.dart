@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:telas_multiplas/tela_dois.dart'; // pacote de widgets para o android
+import 'package:app_aula03_telas_multiplas/tela2.dart';
+import 'package:flutter/material.dart'; // pacote de widgets para o android
 // função principal do aplicativo
 void main() {
   // runAPP função que constroi a tela do app
@@ -31,8 +31,9 @@ class Telaprincipal extends StatelessWidget {
           Container(color: Colors.blue,width: 400,height: 180,
           child: Text("Tela 1",style: TextStyle(fontSize:25 ),),),
           // child é a relação com 1 widgets
+          // Navigator.push permite chamar a tela 2 e MaterialPageRoute chama a tela seguinte
           ElevatedButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => telasecundaria(),));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Telasecundaria(),));
 
           }, child: Text("Tela 2")),
         ],
