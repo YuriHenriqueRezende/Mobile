@@ -30,9 +30,8 @@ class Telaprincipal extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center, // alinhamento principal do widget column
         children: [
           Container(color: Colors.blue,width: 400,height: 180,
-          child: Text("Tela 1",style: TextStyle(fontSize:25 ),),),
-          // child é a relação com 1 widgets
-          // Navigator.push permite chamar a tela 2 e MaterialPageRoute chama a tela seguinte
+          child: Text("A matemática e como uma partitura, o importante não e saber ler musica, o importante e saber ouvi-la",style: TextStyle(fontSize:25 ),),),
+
           ElevatedButton(onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => Telasecundaria(),));
 
