@@ -12,13 +12,13 @@ class Telasecundaria extends StatelessWidget {
       ),
      body: Column(
       children: [
-        Container(color: Colors.red,width: 400,height: 180,),
+        Container(color: Colors.red,width: 400,height: 180,
+        child: Text("Agora é sua vez de lidar com as conseguencias da sua realização.",style: TextStyle(fontSize:25 ),textAlign: TextAlign.center,),),
         ElevatedButton(onPressed: (){
         Navigator.pop(context);
 
         }, child: Text("Tela 1")),
         ElevatedButton(onPressed: (){
-        // Navigator push permite chamar a próxima tela e o Page Route 
         Navigator.push(context, MaterialPageRoute(builder: (context)=>Telaop()));
         }, child: Text("Tela 3"))
       ],

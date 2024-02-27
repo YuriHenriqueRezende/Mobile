@@ -5,7 +5,6 @@ void main() {
 
   runApp(MaterialApp(
     home: Telaprincipal()
-    
   ));
 }
 
@@ -16,7 +15,7 @@ class Telaprincipal extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-       title: Text("Aplicativo aula 03"),
+       title: Text("sm_mobile"),
       ),
       body: 
       Column(
