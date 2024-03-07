@@ -1,74 +1,96 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-
-void main() => runApp(const AnimatedContainerApp());
-
+import 'dart:math'; // importa o pacote para fazer operações matemáticas, conversoes de valores
+void main() {
+  runApp(AnimatedContainerApp());
+}
+// Cria a classe do aplicativo animated container APP
 class AnimatedContainerApp extends StatefulWidget {
-  const AnimatedContainerApp({super.key});
-
+   
+  double height =50; // variaveis para controlar o container
+  double width =50; // variavel para controlar a largura do container
+  Color color = Colors.blueGrey; // variavel para armazenar a cor do container
+  BorderRadiusGeometry borderRadius = BorderRadius.circular(8); // Variavel para armazenar
+  // a borda do container
   @override
   State<AnimatedContainerApp> createState() => _AnimatedContainerAppState();
 }
 
+// Classe que é construida a tela do aplicativo
 class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
-  // Define the various properties with default values. Update these properties
-  // when the user taps a FloatingActionButton.
-  double _width = 50;
-  double _height = 50;
-  Color _color = Colors.green;
-  BorderRadiusGeometry _borderRadius = BorderRadius.circular(8);
+  @override
+  // Metodo de construção da tela
+  Widget build(BuildContext context) {
+    // Material responsável pelos widgets do android
+    return MaterialApp(
+      home: Scaffold(
+      appBar: AppBar(
+        title: Text("App Animation"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+        
+       Center(
+        // AnimatedContainer é um widget
+        child: AnimatedContainer(
+          width: widget.width, // sempre a variavel for declarada fora da classe atual se quiser
+          // chamá-la precisamos utilizar widget.nome da variavel
+          height: widget.height,
+          // decoration para estilizar o widget
+          // BoxDecoration para estilizar o widget da forma desejada
+          decoration: BoxDecoration(
+          color: widget.color, // cor
+          borderRadius: widget.borderRadius, // estilo da borda do container
+          ),
+         duration: Duration(seconds: 1), // duração da animação
+         curve: Curves.fastOutSlowIn, // tipo de animação do widget
+        ),
+       ),
+       // botão do tipo flutuante na tela
+       FloatingActionButton(onPressed: (){
+        setState(() {
+          final random = Random(); // variavel do tipo final que irá receber um numero randomico gerado
+          // pela funçao random
+          widget.height = random.nextInt(300).toDouble(); // valor random gerado com no máximo 300 do tipo inteiro
+          // convertido para double
+          widget.width = random.nextInt(300).toDouble();
+          // gerar cores aleatórias para os containers gerados
+          widget.color =Color.fromRGBO(
+            random.nextInt(256), random.nextInt(256), random.nextInt(256), 1);
+            // borda do container
+            widget.borderRadius = BorderRadius.circular(random.nextInt(100).toDouble()); // altera a borda
+            // do container
+
+
+        });
+       },child: Icon(Icons.play_arrow),),
+       Snack_bar(), // Icon permite escolher um icone para o botao
+       ], 
+      ),
+      ) ,
+    );
+  }
+}
+
+class Snack_bar extends StatelessWidget {
+  const Snack_bar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('AnimatedContainer Demo'),
-        ),
-        body: Center(
-          child: AnimatedContainer(
-            // Use the properties stored in the State class.
-            width: _width,
-            height: _height,
-            decoration: BoxDecoration(
-              color: _color,
-              borderRadius: _borderRadius,
-            ),
-            // Define how long the animation should take.
-            duration: const Duration(seconds: 2),
-            // Provide an optional curve to make the animation feel smoother.
-            curve: Curves.fastOutSlowIn,
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          // When the user taps the button
-          onPressed: () {
-            // Use setState to rebuild the widget with new values.
-            setState(() {
-              // Create a random number generator.
-              final random = Random();
+    return ElevatedButton(onPressed: (){
+      // variavel final chamada snack 
+      final snack = SnackBar(
+        content: Text("Exemplo Snackbar"),
+        // açao do snackbar
+        action: SnackBarAction(
+          label: "Undo",
+           
+          onPressed: (){
 
-              // Generate a random width and height.
-              _width = random.nextInt(300).toDouble();
-              _height = random.nextInt(300).toDouble();
-
-              // Generate a random color.
-              _color = Color.fromRGBO(
-                random.nextInt(256),
-                random.nextInt(256),
-                random.nextInt(100),
-                1,
-              );
-
-              // Generate a random border radius.
-              _borderRadius =
-                  BorderRadius.circular(random.nextInt(300).toDouble());
-            });
-          },
-          child: const Icon(Icons.play_arrow),
-        ),
-      ),
-    );
+          }),
+        );
+        // ScaffoldMessenger é ele quem irá acionar o snackbar
+          ScaffoldMessenger.of(context).showSnackBar(snack);
+    }, child: Text("Mensagem"));
   }
 }

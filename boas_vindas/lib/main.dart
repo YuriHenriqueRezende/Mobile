@@ -36,7 +36,7 @@ class WelcomeScreen extends StatelessWidget {
             SizedBox(height: 20),
             RaisedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/items');
+                Navigator.pushNamed(context, MaterialPageRoute(builder: (context) => Telasecundaria(),));
               },
               child: Text('Go to Items'),
             ),
