@@ -1,69 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:boas_vindas/ShoppingListScreen.dart';
+
+
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    home: WelcomeScreen(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter App',
-      initialRoute: '/',
-      routes: {
-        '/': (context) => WelcomeScreen(),
-        '/items': (context) => ItemsScreen(),
-      },
-    );
-  }
-}
 
 class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Welcome'),
-      ),
+      appBar: AppBar(title: Text('Bem-vindo')),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Welcome to the App!',
-              style: TextStyle(fontSize: 24),
-            ),
-            SizedBox(height: 20),
-            RaisedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, MaterialPageRoute(builder: (context) => Telasecundaria(),));
-              },
-              child: Text('Go to Items'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class ItemsScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Items'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'List of Items',
-              style: TextStyle(fontSize: 24),
-            ),
-            // Add your list of items here
-          ],
+        child: ElevatedButton(
+          child: Text('Ver Lista de Compras'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ShoppingListScreen()),
+            );
+          },
         ),
       ),
     );
