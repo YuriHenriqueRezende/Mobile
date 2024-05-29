@@ -54,33 +54,89 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Login')), // Barra de aplicativo com o título 'Login'
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: _usernameController,
-              decoration: InputDecoration(labelText: 'Username'), // Campo de entrada para o nome de usuário
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.blueAccent, Colors.purpleAccent],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(16.0),
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              elevation: 8.0,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'Login',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    TextField(
+                      controller: _usernameController,
+                      decoration: InputDecoration(
+                        labelText: 'Username',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    TextField(
+                      controller: _passwordController,
+                      decoration: InputDecoration(
+                        labelText: 'Password',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                      obscureText: true, // Oculta o texto digitado para a senha
+                    ),
+                    SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: _login, // Define a função a ser executada quando o botão é pressionado
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurpleAccent,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                      ),
+                      child: Text('Login'), // Texto exibido no botão
+                    ),
+                    SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/register'); // Navega para a tela de registro ao pressionar o botão de registro
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                      ),
+                      child: Text('Register'), // Texto exibido no botão de registro
+                    ),
+                  ],
+                ),
+              ),
             ),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'), // Campo de entrada para a senha
-              obscureText: true, // Oculta o texto digitado para a senha
-            ),
-            SizedBox(height: 20), // Espaçamento entre os widgets
-            ElevatedButton(
-              onPressed: _login, // Define a função a ser executada quando o botão é pressionado
-              child: Text('Login'), // Texto exibido no botão
-            ),
-            SizedBox(height: 20), // Espaçamento entre os widgets
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/register'); // Navega para a tela de registro ao pressionar o botão de registro
-              },
-              child: Text('Register'), // Texto exibido no botão de registro
-            ),
-          ],
+          ),
         ),
       ),
     );
