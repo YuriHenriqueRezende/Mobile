@@ -39,7 +39,10 @@ class _MoviesScreenState extends State<MoviesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Movies')), // Barra de aplicativo com o título 'Movies'
+      appBar: AppBar(
+        title: Text('Movies'), // Título da barra de aplicativo
+        backgroundColor: Colors.red, // Cor de fundo da barra de aplicativo
+      ),
       body: FutureBuilder<List<Movie>>(
         future: _movies, // Define o futuro que contém a lista de filmes
         builder: (context, snapshot) {
@@ -60,6 +63,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
                 final movie = snapshot.data![index]; // Obtém o filme na posição atual
                 // Retorna um card com as informações do filme (imagem, título, duração, ano e nota)
                 return Card(
+                  color: Colors.blue, // Cor de fundo do card
                   child: ListTile(
                     leading: Image.network(
                       movie.imageUrl, // URL da imagem do filme
@@ -68,8 +72,14 @@ class _MoviesScreenState extends State<MoviesScreen> {
                       fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) => Icon(Icons.error), // Ícone exibido em caso de erro ao carregar a imagem
                     ),
-                    title: Text(movie.name), // Título do filme
-                    subtitle: Text('${movie.year} - ${movie.duration} - ${movie.rating}'), // Subtítulo com informações adicionais do filme
+                    title: Text(
+                      movie.name,
+                      style: TextStyle(color: Colors.white), // Cor do texto do título
+                    ),
+                    subtitle: Text(
+                      '${movie.year} - ${movie.duration} - ${movie.rating}',
+                      style: TextStyle(color: Colors.white), // Cor do texto do subtítulo
+                    ),
                   ),
                 );
               },
