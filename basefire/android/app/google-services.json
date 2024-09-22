@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "732839046759",
+    "project_id": "banco-e590b",
+    "storage_bucket": "banco-e590b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732839046759:android:584e44ce68d6ee9dac2ec2",
+        "android_client_info": {
+          "package_name": "com.fireapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxTTAv-QUoaQ9Z2UPJc9AwRTnlVMYFUc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
