@@ -46,10 +46,6 @@ if(context.mounted) Navigator.pop(context);
 
     // tirar o carregamento automaticamente
     displayMessage(context, e.code);
-
-    
-
-    
   }
 }
 
@@ -61,7 +57,6 @@ void displayMessage(BuildContext context, String errorCode) {
       title: Text(message),
       
     
-     
     ),
   );
 }
