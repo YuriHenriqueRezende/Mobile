@@ -1,5 +1,6 @@
 import 'package:app_base/components/button.dart';
 import 'package:app_base/components/text_field.dart';
+import 'package:app_base/themes/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -46,6 +47,10 @@ if(context.mounted) Navigator.pop(context);
 
     // tirar o carregamento automaticamente
     displayMessage(context, e.code);
+
+    
+
+    
   }
 }
 
@@ -57,73 +62,81 @@ void displayMessage(BuildContext context, String errorCode) {
       title: Text(message),
       
     
+     
     ),
   );
 }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
-      // Colors.grey[300] representa uma tonalidade de cinza claro da paleta de cores do Material Design.
+      backgroundColor: AppTheme.cor1, // Usando a cor 'cor1' para o fundo (pêssego claro)
 
       body: SafeArea(
-        // O SafeArea ajusta o layout para que o conteúdo não seja sobreposto por barras de status, notches ou bordas arredondadas do dispositivo.
-
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // logo
-                Icon(
-                  Icons.lock,
-                  size: 100,
+                // Logo
+                Image.asset(
+                  "assets/images/logoProject.png",
+                  height: 150,
+                  // color: AppTheme.cor4, // Usando a cor 'cor4' para o ícone (verde profundo)
                 ),
 
                 const SizedBox(
                   height: 50,
                 ),
-                //bem vindo de volta
+                // Texto de boas-vindas
                 Text(
                   "Bem-vindo de volta, sentimos sua falta!",
                   style: TextStyle(
-                      fontSize: MediaQuery.of(context).size.height * 0.02),
+                    fontWeight: FontWeight.bold,
+                    fontSize: MediaQuery.of(context).size.height * 0.02,
+                    color: AppTheme.cor5, // Usando a cor 'cor4' para o texto
+                  ),
                 ),
 
                 const SizedBox(
                   height: 25,
                 ),
 
-                // email textfield
+                // Email TextField
                 MyTextField(
-                    controller: emailTextController,
-                    hintText: 'Email',
-                    obscureText: false),
+                  controller: emailTextController,
+                  hintText: 'Email',
+                  obscureText: false,
+                ),
                 const SizedBox(
                   height: 10,
                 ),
-                // senha textfield
+                // Senha TextField
                 MyTextField(
-                    controller: passwordTextController,
-                    hintText: 'Senha',
-                    obscureText: true),
+                  controller: passwordTextController,
+                  hintText: 'Senha',
+                  obscureText: true,
+                ),
                 const SizedBox(
                   height: 25,
                 ),
-                // butao de logar
-                MyButton(onTap: signIn, text: "Entrar"),
+                // Botão de login
+                MyButton(
+                  onTap: signIn,
+                  text: "Entrar",
+                  buttonColor: AppTheme.cor3, // Usando a cor 'cor3' para o botão (verde suave)
+                ),
 
                 const SizedBox(
                   height: 25,
                 ),
-                // página de registro!!
+                // Texto para a página de registro
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       "Não é um membro?",
-                      style: TextStyle(color: Colors.grey[700]),
+                      style: TextStyle(color: AppTheme.cor5), // Usando 'cor5' para o texto secundário (marrom suave)
                     ),
                     const SizedBox(
                       width: 4,
@@ -133,7 +146,9 @@ void displayMessage(BuildContext context, String errorCode) {
                       child: Text(
                         "Se inscreva agora!",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.blue),
+                          fontWeight: FontWeight.bold, 
+                          color: AppTheme.cor4, // Usando 'cor4' para o texto de ação (verde profundo)
+                        ),
                       ),
                     )
                   ],
